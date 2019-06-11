@@ -1,0 +1,63 @@
+Avaliação:
+    n Projetos
+    2 Provas
+
+Bibliografia:
+    Algoritmos - Cormen
+    Data Structures Using C - Tanembaum
+
+--------------------------
+
+Árvore Binária: Cada nó só pode ter no maximo 2 filhos
+    Representação: Usando struct com ponteiros direita/esquerda
+        - Pode-se usar Heap
+
+Heap Binário:
+    - Objeto com 2 atributos:
+        - comprimento[A]
+        - tamanhoHeap[A]
+
+    - Heap Máximo e Mínimo:
+        - Máximo:
+            - O nó pai é sempre maior que qualquer filho
+        - Mínimo:
+            - O nó filho é sempre maior que qualquer pai
+             
+        Ex.: <23, 17, 14, 6, 13, 10, 15, 7, 12> é Heap máximo?
+         i = [ 1,  2,  3, 4,  5,  6,  7, 8,  9]
+
+        + O nó raiz é sempre o primeiro;
+        + O nó filho-esquerdo é sempre o valor i-pai * 2.
+        + O nó filho-direito é sempre o valor (i-pai * 2) + 1
+
+                            23
+
+
+                    17              14
+
+
+                6       13      10      15
+
+              8   12
+
+            - Não é Heap Máxima.
+
+    - MAX-HEAPIFY:
+
+        - Procedimento para transformar um Heap não-máximo em um deste tipo. O procedimento sai comparando nó a nó quando este não se encontra num local adequado.
+        - Chamado quando seus filhos a direita e a esquerda são Heaps Máximos;
+
+
+        - Ex.: Ilustre a operação maxHEAPIFY(A, 3) sobre o arranjo
+            A = <27, 17, 3, 16, 13, 10, 15, 7, 12, 4, 8, 9, 0>
+                [ 1,  2, 3,  4,  5,  6,  7, 8,  9,10,11,12,13]
+
+                            27
+
+
+                    17              3
+
+
+                16      13      10      15
+
+              7   12  4    8  9    0
